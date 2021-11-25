@@ -14,7 +14,7 @@ Therefore, a custom dataset containing around 4000 images was collected and labe
 
 2. __Train an Object Detection Model__:
 This project uses YOLOv5[[3]](#ref3) for object detection. As popular datasets used for training 
-(such as COCO, ImageNet, etc) have limited amount of military vehicles images, training an object on a custom dataset
+(such as COCO, ImageNet, etc.) have limited amount of military vehicles images, training an object on a custom dataset
 is necessary.
 
 3. __Combine with an Object Tracking Model__:
@@ -95,8 +95,7 @@ While:
   <summary><b> How to Train on a Custom Dataset? </b></summary>
 
 * For this project, I used Google Colab for the training. 
-* The training pipeline is wrraped in Colab Forms, which allows to
-use code in gui-like environment, with minimal code:
+* The training pipeline is wrraped in Colab Forms, which allows using the code in gui-like environment, with minimal code:
 
 <div align="center">
 
