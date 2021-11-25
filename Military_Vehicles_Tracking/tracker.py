@@ -39,7 +39,7 @@ class MultiObjectTracker:
     @staticmethod
     def _initialize_deepsort():
         cfg = get_config()
-        cfg.merge_from_file('code/deep_sort_pytorch/configs/deep_sort.yaml')
+        cfg.merge_from_file('Military_Vehicles_Tracking/deep_sort_pytorch/configs/deep_sort.yaml')
 
         deepsort = DeepSort(
             cfg.DEEPSORT.REID_CKPT,
