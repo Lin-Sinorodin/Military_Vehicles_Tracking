@@ -4,7 +4,8 @@
 
 ___
 ## Introduction
-This is the code for my project "Multiple Object Tracking for Military Vehicles", which is a part of my BSc in electrical engineering at Technion Israel. The project was done under the supervision of Gabi Davidov PhD - Thanks for his guidance and support durring the whole process.
+> This is the code for my project ___"Multiple Object Tracking for Military Vehicles"___, which is a part of my BSc in electrical engineering at Technion Israel. 
+The project was done under the supervision of Gabi Davidov PhD - Thanks for his guidance and support durring the whole process.
 
 The project can be divided into roughly 3 parts:
 
@@ -24,7 +25,7 @@ After obtaining the object detections (bounding box and class for the objects in
   <summary><b> Repository Structure </b></summary>
 
 ```
-├─ code
+├─ src
 │  ├─ deep_sort_pytorch
 │  ├─ utils
 │  │  ├─ common_images_dataset_downloader.ipynb
@@ -41,11 +42,55 @@ After obtaining the object detections (bounding box and class for the objects in
 │  └─ video.py
 ├─ figures
 ├─ notebooks
+│  ├─ Compare Detectors.ipynb
 │  ├─ test.ipynb
 │  └─ Train YOLOv5.ipynb
 └─ README.md
 ```
 </details>
+
+___
+## Use the Object Tracker
+
+The usage of the object tracking model is pretty straightforward, and should be similar to this snippet:
+
+```python
+import torch
+from src.video import Video
+from src.tracker import MultiObjectTracker
+from src.plot_utils import plot_bounding_boxes
+
+# initialize a video
+video = Video(f'{test_videos_path}/{video_name}')
+
+# initialize object detector
+detector = torch.hub.load('ultralytics/yolov5', 'custom', weights_path).to(device)
+
+# initialize object tracker
+tracker = MultiObjectTracker(video, results_path, detector)
+
+# iterate over the frames in the video
+for frame, bounding_boxes in tracker:
+    plot_bounding_boxes(frame, bounding_boxes)
+    tracker.video_writer.write(frame)
+
+# save the results
+tracker.video_writer.release()
+```
+
+It's __recommended__ to check out the example notebook:
+* Automatically download trained models and test videos (from this [Release](https://github.com/Lin-Sinorodin/Military_Vehicles_Tracking/releases/tag/v1.0.0))
+* Show all steps required in order to run the detectors
+* Display the results on the test videos after done the tracking
+* Using __Google Colab__ Run all the code on the cloud and allows using free GPU
+
+<div align="center">
+
+| Content                        | Notebook                                   | 
+|:------------------------------:|--------------------------------------------|
+| Example of using the MOT model | [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Lin-Sinorodin/Military_Vehicles_Tracking/blob/main/Train_YOLO5.ipynb)|
+  
+</div>
 
 ___
 ## Train YOLOv5 Object Detection Model
@@ -101,7 +146,7 @@ While:
 
 | Content                        | Notebook                                   | 
 |:------------------------------:|--------------------------------------------|
-| Train YOLOv5 on custom dataset | [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Lin-Sinorodin/Military-Vehicles-Tracking/blob/main/Train_YOLO5.ipynb)|
+| Train YOLOv5 on custom dataset | [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Lin-Sinorodin/Military_Vehicles_Tracking/blob/main/Train_YOLO5.ipynb)|
   
 </div>
 
@@ -132,9 +177,6 @@ Then, run the cells, and:
 * After the training is done, the weights and run results can be zipped and downloaded.
 * The trained model can now be used to inference on videos or images. See the YOLOv5 repository for more details.
 </details>
-
-___
-## Results
 
 ___
 ## References
