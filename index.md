@@ -19,8 +19,6 @@ is necessary.
 3. __Combine with an Object Tracking Model__:
 After obtaining the object detections (bounding box and class for the objects in each frame), the purpose of the tracking phase is to understand the relation between the objects over different frames. For this purpose, the DeepSort[[1]](#ref1) algorithm was chosen, with a pre-trained Pytorch implementation[[2]](#ref2).
 
-<details>
-  <summary><b> Repository Structure </b></summary>
 
 ```
 ├─ src
@@ -45,4 +43,3 @@ After obtaining the object detections (bounding box and class for the objects in
 │  └─ Train YOLOv5.ipynb
 └─ README.md
 ```
-</details>
