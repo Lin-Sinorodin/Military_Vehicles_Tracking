@@ -88,7 +88,7 @@ It's __recommended__ to check out the example notebook:
 
 | Content                        | Notebook                                   | 
 |:------------------------------:|--------------------------------------------|
-| Example of using the MOT model | [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Lin-Sinorodin/Military_Vehicles_Tracking/blob/main/Train_YOLO5.ipynb)|
+| Example of using the MOT model | [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Lin-Sinorodin/Military_Vehicles_Tracking/blob/main/Military_Vehicles_Tracking.ipynb)|
   
 </div>
 
