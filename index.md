@@ -1,6 +1,6 @@
-# Military Vehicles Tracking
+![](https://github.com/Lin-Sinorodin/Military_Vehicles_Tracking/blob/main/figures/MOT_poster.png)
 
-![](https://github.com/Lin-Sinorodin/Military_Vehicles_Tracking/blob/main/figures/tank_mud.gif)
+# Multiple Object Tracking of Military Vehicles
 
 ___
 ## Introduction
