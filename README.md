@@ -1,6 +1,6 @@
-# Military Vehicles Tracking
+![](figures/MOT_poster.png)
 
-![](figures/tank_mud.gif)
+# Multiple Object Tracking of Military Vehicles
 
 ___
 ## Introduction
@@ -48,6 +48,12 @@ After obtaining the object detections (bounding box and class for the objects in
 └─ README.md
 ```
 </details>
+
+
+___
+## Example
+
+![](figures/tank_mud.gif)
 
 ___
 ## Use the Object Tracker
